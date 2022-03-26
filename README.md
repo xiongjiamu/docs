@@ -34,3 +34,7 @@ Requests)](https://gitee.com/anolis/docs/pulls) 提交，最终通过 [Gitee
 Pages](https://gitee.com/help/articles/4136) 平台分发。
 
 如需参与文档贡献，可以参考[文档贡献者指南](/CONTRIBUTION-DOCS.md)。
+
+## 5. 常见问题
+
+可以访问[常见问题](/FAQ.md)页面。
