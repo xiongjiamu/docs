@@ -4,7 +4,7 @@
 
 本仓库旨在为龙蜥社区的开发者提供一个文档平台，以帮助开发者熟悉参与社区的方式、社区开发的流程以及获取开发相关的有用信息。
 
-许可声明：**除非另有说明，否则本站内容依据 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/") 许可证进行授权，转载请附上出处链接**。
+许可声明：**除非另有说明，否则本站内容依据 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可证进行授权，转载请附上出处链接**。
 
 ## 2. 了解其他龙蜥社区相关的文档位置
 
@@ -22,7 +22,7 @@
 
 龙蜥开发者文档中心本身也是龙蜥社区开源项目之一，依托 Gitee 平台，接受对文档相关内容的 [Issues](https://gitee.com/anolis/docs/issues) 和 [PR(Pull Requests)](https://gitee.com/anolis/docs/pulls) 提交，最终通过 [Gitee Pages](https://gitee.com/help/articles/4136) 平台分发。
 
-如需参与文档贡献，可以参考[文档贡献者指南](/CONTRIBUTION-DOCS.md)。
+如需参与文档贡献，可以参考[文档贡献者指南](/CONTRIBUTING-DOCS.md)。
 
 ## 5. 常见问题
 
