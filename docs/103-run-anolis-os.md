@@ -22,9 +22,9 @@ Anolis OS 产品文档中包含了 [Anolis OS 8 安装指南](https://www.yuque.
 
 # 3. 使用 Anolis OS 8
 
-Anolis OS 8 的使用习惯兼容大多数 RPM 系的操作系统，例如 RHEL, CentOS, Fedora 等。网上基于这类操作系统的实践文档，很大程度上也可以在 Anolis OS 8 上通用。除此之外，[Anolis OS 产品语雀文档](https://www.yuque.com/anolis-docs)中包含了更多产品使用的说明文档，可以先通过 [FAQ](https://www.yuque.com/anolis-docs/faq) 了解关于 Anolis OS 的常见问题，在日常使用中碰到问题也可以尝试在[知识库](https://www.yuque.com/anolis-docs/kbase)中寻找答案。
+Anolis OS 8 的使用习惯兼容大多数 RPM 系的操作系统，例如 RHEL, CentOS, Fedora 等。网上基于这类操作系统的实践文档，很大程度上也可以在 Anolis OS 8 上通用。除此之外，[Anolis OS 产品语雀文档](https://www.yuque.com/anolis-docs)中包含了更多产品使用的说明文档，例如《[Anolis OS 8 操作系统桌面使用手册](https://www.yuque.com/anolis-docs/manual/desktop-manual)》。可以通过 [FAQ](https://www.yuque.com/anolis-docs/faq) 了解关于 Anolis OS 的常见问题，在日常使用中碰到问题也可以尝试在[知识库](https://www.yuque.com/anolis-docs/kbase)中寻找答案。
 
-**注**: 如果觉得 Anolis OS 8 的产品文档需要改进，可以随时在对应的语雀文档下方评论中留言，也可以在本文档项目的 [Gitee issues](https://gitee.com/anolis/docs/issues) 页面提交需求或反馈问题。
+**注**: 如果对 Anolis OS 8 的产品文档有任何建议或意见，可以随时在对应的语雀文档下方评论中留言，也可以在本文档项目的 [Gitee issues](https://gitee.com/anolis/docs/issues) 页面提交需求或反馈问题。
 
 # 4. 寻求帮助
 
