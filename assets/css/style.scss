@@ -1,32 +1,37 @@
 ---
 ---
 
-$header-bg-color: #d95a00;
-$header-bg-color-secondary: #ff8126;
-$section-headings-color: #ff6a00;
+$header-bg-color: #4da028;
+$header-bg-color-secondary: #8ccc39;
+$section-headings-color: #4da028;
 
 @import 'jekyll-theme-cayman';
 
 @font-face {
     font-family: "Alibaba Sans";
-    src: url('/cloud-kernel/assets/css/AlibabaSans-Regular.otf');
+    src: url('/docs/assets/css/AlibabaSans-Regular.otf');
     font-style: normal;
 }
 
 @font-face {
     font-family: "Alibaba Sans Bold";
-    src: url('/cloud-kernel/assets/css/AlibabaSans-Bold.otf');
+    src: url('/docs/assets/css/AlibabaSans-Bold.otf');
     font-style: bold;
 }
 
 @font-face {
     font-family: "Alibaba Sans Light";
-    src: url('/cloud-kernel/assets/css/AlibabaSans-Light.otf');
+    src: url('/docs/assets/css/AlibabaSans-Light.otf');
     font-style: normal;
+}
+
+p {
+    text-indent: 2em;
 }
 
 body {
     font-family: "Alibaba Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: .1rem;
 }
 
 footer {

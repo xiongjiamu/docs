@@ -1,4 +1,4 @@
 theme: jekyll-theme-cayman
-include:
-- [_layouts]
-- [assets]
+baseurl: /docs
+include: [_layouts]
+lang: zh
