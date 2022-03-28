@@ -2,7 +2,7 @@
 
 ## 1. 报告问题的途径
 
-无论是龙蜥社区还是龙蜥操作系统，都有不完美的地方。作为社区参与者、开发者以及用户，在发现问题的时候反馈给社区，是一件非常有益的事情。反馈问题的途径也有很多种，参考《[102 - 社区讨论途径](/docs/102-join-discussion.md)》页面所说，可以在任何沟通过程中反馈问题。然而，对于问题和产品本身负责的态度，我们希望尽可能使用专用的问题反馈渠道。对于 Anolis OS 来说，[OpenAnolis Bugzilla 系统](https://bugzilla.openanolis.cn)就是一个很好的途径，而对于很多龙蜥的原创项目来说，在各自的 Gitee 代码仓库中，使用 Issue 来上报并管理相关缺陷，也是一个不错的选择。
+无论是龙蜥社区还是龙蜥操作系统，都有不完美的地方。作为社区参与者、开发者以及用户，在发现问题的时候反馈给社区，是一件非常有益的事情。反馈问题的途径也有很多种，参考《[102 - 社区讨论途径](/articles/102-join-discussion.md)》页面所说，可以在任何沟通过程中反馈问题。然而，对于问题和产品本身负责的态度，我们希望尽可能使用专用的问题反馈渠道。对于 Anolis OS 来说，[OpenAnolis Bugzilla 系统](https://bugzilla.openanolis.cn)就是一个很好的途径，而对于很多龙蜥的原创项目来说，在各自的 Gitee 代码仓库中，使用 Issue 来上报并管理相关缺陷，也是一个不错的选择。
 
 当前龙蜥社区使用 Bugzilla 系统来管理的项目，可以通过[这个链接](https://bugzilla.openanolis.cn/describecomponents.cgi)查看。简单来讲，和Anolis OS 发行版、LifseaOS(Container OS) 发行版和ANCK 内核项目有关的问题，会优先推荐从 Bugzilla 系统提交。各个 SIG 组和独立项目，会定义自己的问题管理方式。例如 [轻豚 Keentune](https://gitee.com/anolis/keentuned) 项目，就使用 [Gitee Issues](https://gitee.com/anolis/keentuned/issues) 来管理各种缺陷。
 
