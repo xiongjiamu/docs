@@ -108,15 +108,15 @@ PR 页面的入口位于 Gitee 页面上方标签页醒目位置，或者直接�
 OpenAnolis 龙蜥社区相关的术语有如下规范：
 
 + 社区：
-  + 完整名称： OpenAnolis 龙蜥社区
-  + 简称（推荐）：龙蜥社区
-  + 简称（英文或中英文混合场景适用）：OpenAnolis 社区，OpenAnolis Community
+  + **完整名称**： OpenAnolis 龙蜥社区；
+  + **简称**（推荐）：龙蜥社区；
+  + **简称**（英文或中英文混合场景适用）：OpenAnolis 社区，OpenAnolis Community；
 + 操作系统：
-  + 完整名称：龙蜥操作系统（Anolis OS）
-  + 带版本名称：龙蜥操作系统（Anolis OS）V8
-  + 简称（推荐）：Anolis OS
-  + 简称（带版本名称）：Anolis OS 8
-  + 简称（需要强调中文的场景）：龙蜥操作系统，龙蜥 OS
+  + **完整名称**：龙蜥操作系统 (Anolis OS)；
+  + **带版本完整名称**：龙蜥操作系统 (Anolis OS) V8，龙蜥操作系统 (Anolis OS) V8.2，龙蜥操作系统 (Anolis OS) 8.2 均可；
+  + **简称**（推荐）：Anolis OS；
+  + **简称**（带版本名称）：Anolis OS 8，Anolis OS 8.2；
+  + **简称**（需要强调中文的场景）：龙蜥操作系统，龙蜥 OS。
 
 在第一次出现相关术语的时候，建议使用完整名称，此后可使用简称。
 
