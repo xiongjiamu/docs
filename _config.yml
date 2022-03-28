@@ -3,4 +3,5 @@ baseurl: /docs
 include:
     - [_layouts]
     - [_includes]
+    - CONTRIBUTING.md
 lang: zh
