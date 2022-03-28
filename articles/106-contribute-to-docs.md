@@ -48,8 +48,8 @@
 
 ### 2.1 准备工作
 首先，你需要注册 Gitee 账号，同时需要在龙蜥网站签署 CLA 协议，也需要注册主站账号。相关账号注册和使用可以参考：
-+ 《[101 - 社区账号指南](/docs/101-accounts.md)》
-+ 《[202 - Gitee 平台使用指南](/docs/202-intro-to-gitee.md)》
++ 《[101 - 社区账号指南](../articles/101-accounts.md)》
++ 《[202 - Gitee 平台使用指南](../articles/202-intro-to-gitee.md)》
 
 接下来，你需要通过 Git 协作，因此需要掌握 Git 相关知识，`TODO` 目前本站缺乏 Git 相关教程，但是可以先看一些网上的教程：
 + 《[Gitbook 中文版](https://git-scm.com/book/zh/v2)》

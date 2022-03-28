@@ -1,6 +1,6 @@
 # 龙蜥社区贡献者指南
 
-注：本文的所有文档，都可以直接点击 Gitee 上的对应页面看到。浏览页面列表可以点击[这里](https://gitee.com/anolis/docs/tree/main/docs)。
+注：本文的所有文档，都可以直接点击 Gitee 上的对应页面看到。浏览页面列表可以点击[这里](https://gitee.com/anolis/docs/tree/main/articles)。
 
 ## 1. 谁说只有写代码才算为社区做贡献？
 
@@ -36,7 +36,7 @@
 
 龙蜥开发者文档中心本身也是龙蜥社区开源项目之一，依托 Gitee 平台，接受对文档相关内容的 [Issues](https://gitee.com/anolis/docs/issues) 和 [PR(Pull Requests)](https://gitee.com/anolis/docs/pulls) 提交，最终通过 [Gitee Pages](https://gitee.com/help/articles/4136) 平台分发。
 
-如需参与文档贡献，可以参考《[106 - 文档贡献者指南](/106-contribute-to-docs.md)》页面。
+如需参与文档贡献，可以参考《[106 - 文档贡献者指南](/articles/106-contribute-to-docs.md)》页面。
 
 ### 1.7 欢迎使用面向社区爱好者的基础设施
 
