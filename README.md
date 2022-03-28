@@ -16,7 +16,7 @@
 
 ## 3. 参与龙蜥社区的方式
 
-有很多种参与社区的方式，下面是我们给出的一些参考文档，文档导航详情请访问[贡献者指南](/CONTRIBUTING-GUIDE.md)页面。
+有很多种参与社区的方式，下面是我们给出的一些参考文档，文档导航详情请访问[贡献者指南](/CONTRIBUTING.md)页面。
 
 1. 入门
   + 《[101 - 社区账号指南](/docs/101-accounts.md)》
@@ -24,7 +24,7 @@
   + 《[103 - 下载、安装和使用龙蜥操作系统](/docs/103-run-anolis-os.md)》
   + 《[104 - 测试龙蜥操作系统](/docs/104-help-with-testing.md)》
   + 《[105 - 报告问题](/docs/105-report-issues.md)》
-  + 《[106 - 文档贡献者指南](/CONTRIBUTING-DOC.md)》
+  + 《[106 - 文档贡献者指南](/docs/106-contribute-to-doc.md)》
   + 《[107 - 社区开发基础设施](/docs/107-infra.md)》
   + 《[108 - 分享和投稿指南](/docs/108-sharing-anolis-os-best-practice.md)》
 2. 基础开发
@@ -47,7 +47,7 @@
 
 龙蜥开发者文档中心本身也是龙蜥社区开源项目之一，依托 Gitee 平台，接受对文档相关内容的 [Issues](https://gitee.com/anolis/docs/issues) 和 [PR(Pull Requests)](https://gitee.com/anolis/docs/pulls) 提交，最终通过 [Gitee Pages](https://gitee.com/help/articles/4136) 平台分发。
 
-如需参与文档贡献，可以参考[文档贡献者指南](/CONTRIBUTING-DOCS.md)。
+如需参与文档贡献，可以参考[文档贡献者指南](/docs/106-contribute-to-doc.md)。
 
 ## 5. 常见问题
 
