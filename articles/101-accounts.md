@@ -11,6 +11,7 @@
 + [Bug跟踪系统](https://bugzilla.openanolis.cn/)；
 + [测试平台](https://testfarm.openanolis.cn/)；
 + [龙蜥实验室](https://lab.openanolis.cn/)
+
 更多功能和基础设施正在添加中，如果想要一睹为快，请记得先注册一个社区账号吧！
 
 ## 2. 注册社区账号
