@@ -6,7 +6,7 @@
 OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 23，都有相似的 YUM 仓库结构，这有助于用户通过 YUM 等系统工具获取操作系统内更新时，拥有较为一致的体验。
 龙蜥社区欢迎广大开发者积极贡献软件包到 Anolis OS 中，集成过程需要遵循该软件包仓库结构。仓库结构大致示意图如下：
 
-![龙蜥软件包仓库](/docs/images/305-anolis-yum-repo.png)
+![龙蜥软件包仓库](../images/305-anolis-yum-repo.png)
 
 从来源区分，软件包仓库包含系统包和 SIG 包，往下细分又有不同的子仓库。对于用户来说，每一个子仓库在系统中的表现不同：有的仓库预装在 Anolis OS 默认仓库列表中，有的没有预装；有的默认使能，执行 `yum install` 即可执行安装，有的默认不使能，需要添加 `--enablerepo` 参数；有的仓库里的软件包跟随 ISO 交付，有的不跟随。下面是一个简单的对照例子：
 
@@ -47,73 +47,35 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 ## 4. 我应该分发我的软件包到哪个 YUM 仓库中？
 
 如前文所述， Anolis OS 软件包仓库包含系统包和 SIG 包两大类。从 SIG 组产出的软件包，都应当首先集成为 SIG 包。
-- SIG 包
-  参照其他成熟开源社区，集成为 SIG 包后会经历孵化期和成熟期，龙蜥社区技术委员会和发布 SIG (sig-distro) 会从技术侧进行软件包集成和孵化指导。对于操作系统特别重要的软件包，还可以进一步孵化为系统包。
-- 系统包
-  通常来源于操作系统主动选型，包含基础系统不可分割的组件（BaseOS）、应用生态的重要组件（AppStream）、devops 依赖工具（PowerTools）及额外仓库文件（extras）等。对于可以孵化为系统包的 SIG 包，社区也提供了指导流程，满足条件的 SIG 包可以根据流程升级为系统包。
+- **SIG 包**: 参照其他成熟开源社区，集成为 SIG 包后会经历孵化期和成熟期，龙蜥社区技术委员会和发布 SIG (sig-distro) 会从技术侧进行软件包集成和孵化指导。对于操作系统特别重要的软件包，还可以进一步孵化为系统包。
+- **系统包**: 通常来源于操作系统主动选型，包含基础系统不可分割的组件（BaseOS）、应用生态的重要组件（AppStream）、devops 依赖工具（PowerTools）及额外仓库文件（extras）等。对于可以孵化为系统包的 SIG 包，社区也提供了指导流程，满足条件的 SIG 包可以根据流程升级为系统包。
+
 作为集成的入口，针对 SIG 包，社区提供了多种不同的集成路径和孵化路径，大致如下：
 
-![集成步骤](/docs/images/305-intergration-ways.png)
+![集成步骤](../images/305-intergration-ways.png)
 
 从流程图可以看到，基于维护策略是否跟随系统更新走，会集成到不同的仓库。此处的“系统更新”特指发行版小版本的更新，如 Anolis OS 8.2 到 8.4 版本更新。
 
 - 如果一个小版本更新了，为了专门适配此次升级，该软件包可能会迎来一次专门的升级和更新，那么应当集成到每一个小版本的 SIG 仓库中，例如 DDE(独立的 SIG repo), Experimental(非独立的 SIG repo)；
 - 如果小版本更新后，该软件包并不需要专门升级，只需要定期独立维护，则可以放到 EPAO 仓库中。
+
 集成到每一个小版本的 SIG 仓库也有不同的形式，主要分为独立的 SIG 仓库和非独立的 SIG 仓库。Anolis OS 提供了两个非独立的 SIG 仓库，Experimental 和 Plus. 其中 Experimental 仓库可以接收相对更不稳定的 SIG 包，Plus 仓库只能接收生产级可用的稳定包。
 
 上述提到的各种集成方式详细对比如下：
 
-<table>
-    <tr>
-        <td></td>
-        <td><b>YUM repo</b></td>
-        <td><b>EPAO</b></td>
-        <td><b>非独立 SIG repo<br>Experimental & Plus</b></td>
-        <td><b>独立 SIG repo</b></td>
-   </tr>
-    <tr>
-        <td rowspan="3">对维护者</td>
-  		<td>发行版大版本更新后需要采取的措施</td>
-      	<td>跟随更新</td>
-        <td>跟随更新</td>
-        <td>跟随更新</td>
-    </tr>
-    <tr>
-  		<td>发行版小版本更新后需要采取的措施</td>
-      	<td>不主动跟随，不重新构建，<br>除非依赖关系发生冲突</td>
-        <td>跟随更新</td>
-        <td>跟随更新</td>
-    </tr>
-    <tr>
-  		<td>一次推送的软件包数量</td>
-      	<td>无限制</td>
-        <td>SRPM <= 30 个且<br>单架构下 RPM <= 50 个</td>
-        <td>SRPM > 30 个且<br>单架构下 RPM > 50 个</td>
-    </tr>
-    <tr>
-        <td rowspan="3">对用户</td>
-  		<td>ISO 中是否包含该仓库</td>
-      	<td>否</td>
-        <td>Experimental 不包含<br>Plus 包含</td>
-        <td>不包含</td>
-    </tr>
-    <tr>
-  		<td>系统中是否预装该仓库的 repo 文件</td>
-      	<td>否</td>
-        <td>Experimental 否<br>Plus 是</td>
-        <td>孵化期 repo 否<br>成熟期 repo 是</td>
-    </tr>
-    <tr>
-  		<td>用户是否需要手动开启 repo</td>
-      	<td>否，添加 repo 文件自动开启</td>
-        <td>是</td>
-        <td>是</td>
-    </tr>
-</table>
+视角↓    | YUM repo →<br>参考项↓| EPAO | 非独立 SIG repo<br>Experimental & Plus | 独立 SIG repo
+---------|-----------|------|----------------------------------------|--------------
+对维护者 | 大版本更新后<br>需要采取的措施 | 跟随更新 | 跟随更新 | 跟随更新
+对维护者 | 小版本更新后<br>需要采取的措施 | 不主动跟随，不重新构建，除非依赖关系发生冲突 | 跟随更新 | 跟随更新
+对维护者 | 一次推送的软件包数量 | 无限制 | SRPM <= 30 个且单架构下 RPM <= 50 个 | SRPM > 30 个且单架构下 RPM > 50 个
+对用户 | ISO 是否包含该仓库 | 否 | Experimental 不包含; Plus 包含 | 不包含
+对用户 | 系统中是否预装<br>该仓库的 repo 文件 | 否 | Experimental 否; Plus 是 | 孵化期 repo 否<br>成熟期 repo 是
+对用户 | 用户是否需要<br>手动开启 repo | 否，添加 repo 文件自动开启 | 是 | 是
 
 ## 5. 我如何提交软件包集成申请？
 
 软件包集成申请都需要通过 SIG 来运作，如果想要引入的软件包未归属到已有 SIG 中，请浏览[社区 SIG 页面](https://openanolis.cn/sig)找到对应的 SIG 组加入；如果找不到对应的 SIG，也欢迎先联系社区（钉钉群“龙蜥OpenAnolis社区交流群”，群号 **33311793**）了解如何找到或创建一个 SIG。
+
 当前软件包集成申请是通过社区的软件包集成项目 ([ospkg-list](https://gitee.com/anolis/ospkg-list)) 提交集成意向申请。当前我们使用 Issue 来跟踪和审核申请，后续社区可能会改为 Pull Request 模式提升审核的自动化能力。注意如果需要从 repo 中删除一个软件包，也可以使用该流程。
 
 - 软件包新增申请模板
@@ -145,6 +107,7 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 - 如何编写 RPM SPEC；
 - 如何正确处理 RPM 依赖关系，以免破坏系统现有依赖关系；
 - 如何保证系统兼容性，确保操作系统升级之后自己的软件包不受影响，或在升级软件包后不破坏系统本身的兼容性。
+
 后续社区也会提供一系列教程和工具，提升整个过程的自动化程度，帮助 SIG 组的成员们在软件包集成和发布中顺利完成 landing。
 
 ## 6. 我的软件包如何孵化为成熟包及系统包？
@@ -160,7 +123,6 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 3|系统包阶段|[Plus](http://mirrors.openanolis.cn/anolis/8/Plus/)|✅ 包含在 anolis-repos<br>❌ YUM 仓库使能<br>✅ 包含在 ISO<br>❌ 安装引导可配<br>❌ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
 4|系统包阶段|[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)<br>[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|✅ 包含在 anolis-repos<br>✅ YUM 仓库使能<br>✅ 安装引导可配<br>✅ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
 5|系统包阶段|[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)<br>[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|✅ 包含在 anolis-repos<br>✅ YUM 仓库使能<br>✅ 安装引导可配<br>✅ 安装引导可配<br>✅ 安装引导默认勾选<br>✅ （仅系统服务）开机自动启动
-
 
 在层级升级转入的过程中，需要提供如下材料：
 - 提供典型场景测试自证明数据；
