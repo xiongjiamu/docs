@@ -12,15 +12,15 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 
 仓库名|SIG 仓库|阶段|Gitee 仓库|ISO 包含|仓库默认状态
 --|--|--|--|--|--
-[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|是|✅ 预装 ✅ 使能
-[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|是|✅ 预装 ✅ 使能
-[PowerTools](http://mirrors.openanolis.cn/anolis/8/PowerTools/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|否|✅ 预装 ✅ 使能
-[Extras](http://mirrors.openanolis.cn/anolis/8/Extras/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|否|✅ 预装 ✅ 使能
-[Plus](http://mirrors.openanolis.cn/anolis/8/Plus/)|是|包成熟阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|是|✅ 预装 ❌ 使能
-[HighAvaliability](http://mirrors.openanolis.cn/anolis/8/HighAvailability/)|是|包成熟阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|✅ 预装 ❌ 使能
-[DDE](http://mirrors.openanolis.cn/anolis/8/DDE/)|是|包成熟阶段|[src-anolis-dde](https://gitee.com/src-anolis-dde)|否|✅ 预装 ❌ 使能
-[Experimental](http://mirrors.openanolis.cn/anolis/8/Experimental/)|是|包孵化阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|❌ 预装 ❌ 使能
-[EPAO](https://mirrors.openanolis.cn/epao/)|是|包孵化阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|❌ 预装 ❌使能
+[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|是|✅ 预装<br>✅ 使能
+[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|是|✅ 预装<br>✅ 使能
+[PowerTools](http://mirrors.openanolis.cn/anolis/8/PowerTools/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|否|✅ 预装<br>✅ 使能
+[Extras](http://mirrors.openanolis.cn/anolis/8/Extras/)|否|系统包阶段|[src-anolis-os](https://gitee.com/src-anolis-os)|否|✅ 预装<br>✅ 使能
+[Plus](http://mirrors.openanolis.cn/anolis/8/Plus/)|是|包成熟阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|是|✅ 预装<br>❌ 使能
+[HighAvaliability](http://mirrors.openanolis.cn/anolis/8/HighAvailability/)|是|包成熟阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|✅ 预装<br>❌ 使能
+[DDE](http://mirrors.openanolis.cn/anolis/8/DDE/)|是|包成熟阶段|[src-anolis-dde](https://gitee.com/src-anolis-dde)|否|✅ 预装<br>❌ 使能
+[Experimental](http://mirrors.openanolis.cn/anolis/8/Experimental/)|是|包孵化阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|❌ 预装<br>❌ 使能
+[EPAO](https://mirrors.openanolis.cn/epao/)|是|包孵化阶段|[src-anolis-sig](https://gitee.com/src-anolis-sig)|否|❌ 预装<br>❌ 使能
 
 ## 2. 软件包集成的意义
 软件包默认集成到 Anolis OS 这个操作系统中，更多地意味着再分发（re-distribution）的便利。
