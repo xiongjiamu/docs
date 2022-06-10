@@ -40,7 +40,7 @@
   + 《[302 - 发行版构建指南](/articles/302-join-os-package-build.md)》
   + 《[303 - 内核研发指南](/articles/303-join-kernel-developing.md)》
   + 《[304 - 软件包维护指南](/articles/304-maintain-a-package.md)》
-  + 《[305 - 开源项目集成到龙蜥操作系统指南](/articles/305-add-project-to-anolis-os.md)》
+  + 《[305 - 龙蜥社区软件包集成流程](/articles/305-add-project-to-anolis-os.md)》
   + 《[306 - 从零构建一个龙蜥开源项目](/articles/306-build-a-new-project.md)》
 
 ## 4. 参与文档贡献
