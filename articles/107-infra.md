@@ -2,6 +2,8 @@
 
 社区开发基础设施包含一系列社区研发、测试的支撑系统，目前正在快速发展中。
 
+基础设施 SIG：https://openanolis.cn/sig/SIG-Infra
+
 ## 社区官网
 
 社区官网是社区信息交流的门户，是完全自研建立的，包含首页、SIG、活动、动态、博客、下载、支持、后台管理等完备的信息互动交流以及管理模块；社区用户可以通过官网查看龙蜥的一系列公告、会议、活动、文档以及其它各类基础设施等。
@@ -52,7 +54,7 @@ Gitee链接：https://gitee.com/openanolis
 ### 1. 龙蜥实验室
 
 龙蜥实验室为社区用户提供了一个预装龙蜥OS的在线机器资源服务；用户可以通过web页面及机器人等形式自动创建和管理机器资源，
-为社区用户体验Anolis OS以及使用Anolis OS进行开发测试提供了极大的便利性，满足社区用户对于机器资源的各类需求。
+为社区用户体验 Anolis OS 以及使用 Anolis OS 进行开发测试提供了极大的便利性，满足社区用户对于机器资源的各类需求。
 目前龙蜥实验室正在开发
 
 系统链接：https://lab.openanolis.cn/#/apply/home
@@ -61,9 +63,15 @@ Gitee链接：https://gitee.com/openanolis
 
 ### 2. T-One（Testing in One）
 
-T-One是一站式的自动化质量协作平台；打通了测试计划、测试准备、测试执行、测试分析、测试报告、覆盖率检测、智能Bisect，环境服务等流程的闭环，为社区研发提供一站式质量服务。
+T-One（Testing in One）是一站式的自动化质量协作平台；打通了测试计划、测试准备、测试执行、测试分析、测试报告、覆盖率检测、智能Bisect，环境服务等流程的闭环，为社区研发提供一站式质量服务。
 
-系统链接：https://tone.openanolis.cn/
+平台采用分布式业务架构设计，分master/slave端，对外统一叫Testfarm: 
+1. master端：对外称为Testfarm，负责测试监控触发，整体测试的数据对外展示。
+2. slave端：对外称为T-One, 负责测试执行，支持社区、外部用户测试；外部用户也可以独立部署。
+
+
+T-One 链接：https://tone.openanolis.cn/
+Testfarm 链接：https://testfarm.openanolis.cn/
 用户文档：https://tone.openanolis.cn/help_doc/1
 T-One SIG：https://openanolis.cn/sig/t-one
 
@@ -71,6 +79,6 @@ T-One SIG：https://openanolis.cn/sig/t-one
 
 ### 3. ABS（Anolis Build Service）
 
-ABS（Anolis Build Service）
+ABS（Anolis Build Service）是龙蜥社区的构建服务，为社区开发者、社区版本发行提供构建支持，包括软件包、镜像、以及社区 CICD 流程的构建支撑。
 
 系统链接：https://abs.openanolis.cn/all_project
