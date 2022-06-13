@@ -2,7 +2,7 @@
 
 社区开发基础设施包含一系列社区研发、测试的支撑系统，目前正在快速发展中。
 
-基础设施 SIG：https://openanolis.cn/sig/SIG-Infra
+基础设施 SIG：https://openanolis.cn/sig/SIG-Infra ，欢迎加入 SIG 进行交流。
 
 ## 社区官网
 
@@ -39,6 +39,7 @@
 龙蜥社区有完善的需求缺陷管理系统，社区开发者可以通过它管理需求、缺陷；一般产品级的需求或缺陷使用 bugzilla 进行管理，项目级别的需求或缺陷使用 gitee issue 进行管理。
 
 Bugzilla链接：https://bugzilla.openanolis.cn/
+
 Gitee链接：https://gitee.com/openanolis
 
 ## 邮件列表系统
@@ -58,6 +59,7 @@ Gitee链接：https://gitee.com/openanolis
 目前龙蜥实验室正在开发
 
 系统链接：https://lab.openanolis.cn/#/apply/home
+
 使用指南：https://www.yuque.com/anolis-docs/community/peng85
 
 
@@ -71,11 +73,14 @@ T-One（Testing in One）是一站式的自动化质量协作平台；打通了�
 
 
 T-One 链接：https://tone.openanolis.cn/
+
 Testfarm 链接：https://testfarm.openanolis.cn/
+
 用户文档：https://tone.openanolis.cn/help_doc/1
+
 T-One SIG：https://openanolis.cn/sig/t-one
 
-欢迎加入 T-One SIG 进行交流。
+也欢迎加入 T-One SIG 进行交流。
 
 ### 3. ABS（Anolis Build Service）
 
