@@ -35,6 +35,7 @@
   + 《[205 - 开发过程不完全指南](/articles/205-ready-for-first-task.md)》
   + 《[206 - 提交 PR 操作指南](/articles/206-submit-codes-via-gitee-pr.md)》
   + 《[207 - 让你的代码更快被接受的N个建议](/articles/207-how-to-get-codes-merged.md)》
+  + 《[208 - 使用ABS平台轻松胜任Anolis OS开发工作](/articles/208-how-to-build-package-via-ABS.md)》
 3. 进阶开发
   + 《[301 - Review 代码指南](/articles/301-join-code-review.md)》
   + 《[302 - 发行版构建指南](/articles/302-join-os-package-build.md)》
