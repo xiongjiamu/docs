@@ -120,7 +120,7 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 --|--|--|--
 1|包孵化阶段|[Experimental](http://mirrors.openanolis.cn/anolis/8/Experimental/)<br>[EPAO](https://mirrors.openanolis.cn/epao/)<br>独立 SIG repo|❌ 包含在 anolis-repos<br>❌ 安装引导可配<br>❌ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
 2|包成熟阶段|独立 SIG repo|✅ 包含在 anolis-repos<br>❌ YUM 仓库使能<br>❌ 包含在 ISO<br>❌ 安装引导可配<br>❌ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
-3|系统包阶段|[Plus](http://mirrors.openanolis.cn/anolis/8/Plus/)|✅ 包含在 anolis-repos<br>❌ YUM 仓库使能<br>✅ 包含在 ISO<br>❌ 安装引导可配<br>❌ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
+3|包成熟阶段|[Plus](http://mirrors.openanolis.cn/anolis/8/Plus/)|✅ 包含在 anolis-repos<br>❌ YUM 仓库使能<br>✅ 包含在 ISO<br>❌ 安装引导可配<br>❌ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
 4|系统包阶段|[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)<br>[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|✅ 包含在 anolis-repos<br>✅ YUM 仓库使能<br>✅ 安装引导可配<br>✅ 安装引导默认勾选<br>❌ （仅系统服务）开机自动启动
 5|系统包阶段|[BaseOS](http://mirrors.openanolis.cn/anolis/8/BaseOS/)<br>[AppStream](http://mirrors.openanolis.cn/anolis/8/AppStream/)|✅ 包含在 anolis-repos<br>✅ YUM 仓库使能<br>✅ 安装引导可配<br>✅ 安装引导可配<br>✅ 安装引导默认勾选<br>✅ （仅系统服务）开机自动启动
 
