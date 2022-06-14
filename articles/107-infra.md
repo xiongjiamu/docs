@@ -16,22 +16,14 @@
 
 平台链接：https://gitee.com/openanolis
 
-代码托管目录规范：
+龙蜥社区主要代码仓库：
 1. source tree：[anolis](https://gitee.com/anolis)
 	- 存放 Anolis OS 各类项目源代码。
 2. rpm tree：[src-anolis-os](https://gitee.com/src-anolis-os)
 	- Anolis OS 发行版默认 RPM 打包代码（通常应当包含一个 spec 文件）。
-3. module：https://gitee.com/src-anolis-module
-	- Anolis OS module 包描述文件的存放组织。
-4. Plus 包 rpm tree：[src-anolis-plus](https://gitee.com/src-anolis-plus)
-	- 存放 rpm tree plus 包。
-5. SIG 包 rpm tree：[src-anolis-sig](https://gitee.com/src-anolis-sig)
+3. SIG 包 rpm tree：[src-anolis-sig](https://gitee.com/src-anolis-sig)
 	- Anolis OS SIG RPM 打包代码（通常应当包含一个 spec 文件）。
-6. DDE 包：[src-anolis-dde](https://gitee.com/src-anolis-dde)
-	- Anolis OS rpm tree repo for anolis dde sig。
-7. Epao 包：[src-anolis-epao](https://gitee.com/src-anolis-epao)
-	- Extra Packages for Anolis OS -- RPM Tree。
-8. Anolis Education: [anolis-education](https://gitee.com/anolis-education)
+4. Anolis Education: [anolis-education](https://gitee.com/anolis-education)
 	- 龙蜥高校合作，产教融合，服务于基础软硬件人才培养，开源知识和文化普及。
 
 ## Issue 管理平台
@@ -65,20 +57,19 @@ Gitee链接：https://gitee.com/openanolis
 
 ### 2. T-One（Testing in One）
 
-T-One（Testing in One）是一站式的自动化质量协作平台；打通了测试计划、测试准备、测试执行、测试分析、测试报告、覆盖率检测、智能Bisect，环境服务等流程的闭环，为社区研发提供一站式质量服务。
+T-One（Testing in One）是一站式的自动化质量协作平台；打通了测试计划、测试准备、测试执行、测试分析、测试报告、覆盖率检测、智能 Bisect，环境服务等流程的闭环，为社区研发提供一站式质量服务。
 
-平台采用分布式业务架构设计，分master/slave端，对外统一叫Testfarm: 
-1. master端：对外称为Testfarm，负责测试监控触发，整体测试的数据对外展示。
-2. slave端：对外称为T-One, 负责测试执行，支持社区、外部用户测试；外部用户也可以独立部署。
+平台采用分布式业务架构设计，分master/slave端，对外统一叫 T-One: 
+1. master端：对外称为 Testfarm，负责社区测试数据的对外披露及展示。
+	- Testfarm 链接：https://testfarm.openanolis.cn/
+2. slave端：对外称为 T-One，负责测试执行，支持社区、外部用户测试；外部用户也可以独立部署。
 
 
 T-One 链接：https://tone.openanolis.cn/
 
-Testfarm 链接：https://testfarm.openanolis.cn/
-
 用户文档：https://tone.openanolis.cn/help_doc/1
 
-T-One SIG：https://openanolis.cn/sig/t-one
+T-One SIG：https://openanolis.cn/sig/t-one 
 
 也欢迎加入 T-One SIG 进行交流。
 
