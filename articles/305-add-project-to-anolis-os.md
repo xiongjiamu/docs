@@ -76,10 +76,51 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 
 软件包集成申请都需要通过 SIG 来运作，如果想要引入的软件包未归属到已有 SIG 中，请浏览[社区 SIG 页面](https://openanolis.cn/sig)找到对应的 SIG 组加入；如果找不到对应的 SIG，也欢迎先联系社区（钉钉群“龙蜥OpenAnolis社区交流群”，群号 **33311793**）了解如何找到或创建一个 SIG。
 
-当前软件包集成申请是通过社区的软件包集成项目 ([ospkg-list](https://gitee.com/anolis/ospkg-list)) 提交集成意向申请。当前我们使用 Issue 来跟踪和审核申请，后续社区可能会改为 Pull Request 模式提升审核的自动化能力。注意如果需要从 repo 中删除一个软件包，也可以使用该流程。
+当前软件包集成申请是通过社区的软件包集成项目 ([ospkg-list](https://gitee.com/anolis/ospkg-list)) 通过 Pull Request 提交集成意向申请。注意如果需要从 repo 中删除一个软件包，也可以使用该流程。
 
-- 软件包新增申请模板
+- 软件包新增申请 Pull Request 步骤
 
+**步骤一**：增加计划集成包对应仓库下的 ${package}.yaml 文件，并完成按需填写；
+
+```
+name: packge-name                                  // 软件名称，必填
+repository: https://gitee.com/src-anolis-xx/name   // 软件对应的 gitee 地址，必填
+summary: xxxxxxxxxxxxxx                            // 软件的简单描述，选填
+source_owner: owner1                               // 自研软件的 source 维护 owner 的邮箱，如果存在多个 owner， 请用 "," 隔开，默认缺省，自研软件必填
+rpm_owner: owner2                                  // 自研软件的 rpm 维护 onwer 的邮箱，如果存在多个 owner， 请用 “,” 隔开，默认缺省，自研软件必填
+branches:                                          // 软件的所有分支，每条分支下支持拓展，分支必填，分支下的扩展选填
+‒ a7
+- a8
+- a23
+```
+
+举例：
+下面给出两个 package.yaml 的样例，一个为自研软件，一个为开源三方软件。
+
+自研包或者自研 patch 结构 --- cloud-init
+```
+name: cloud-init
+repository: https://gitee.com/src-anolis-os/cloud-init
+summary: Cloud instance init scripts
+source_owner: xiaolong@openanolis.org
+rpm_owner: xiaolong@openanolis.org
+branches:
+‒ a7
+‒ a8
+‒ a23
+```
+
+开源三方软件包 --- awscli
+```
+name: awscli
+repository: https://gitee.com/src-anolis-os/awscli
+summary: Universal Command Line Environment for AWS
+branches:
+- a7
+- a8
+```
+
+**步骤二**：针对新增 package.yaml 提交 Pull Request，并在 commit log 提供如下信息；
 ```
 1. 软件包名：
 2. 软件包分类（可以大致评估一下软件包属于系统中哪种分类，如 Development/Tools）：
@@ -95,7 +136,11 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 12. 其他可以帮助软件包集成的补充说明：
 ```
 
-- 软件包退休申请模板
+- 软件包退休申请 Pull Request 步骤
+
+**步骤一**：删除计划集成包对应仓库下的 ${package}.yaml 文件；
+
+**步骤二**：针对删除 package.yaml 提交 Pull Request，并在 commit log 提供如下信息；
 
 ```
 1. 软件包名：
