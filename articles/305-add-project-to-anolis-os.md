@@ -94,10 +94,8 @@ branches:                                          // 软件的所有分支，�
 - a23
 ```
 
-举例：
-下面给出两个 package.yaml 的样例，一个为自研软件，一个为开源三方软件。
+下面是 package.yaml 的样例：
 
-自研包或者自研 patch 结构 --- cloud-init
 ```
 name: cloud-init
 repository: https://gitee.com/src-anolis-os/cloud-init
@@ -108,16 +106,6 @@ branches:
 ‒ a7
 ‒ a8
 ‒ a23
-```
-
-开源三方软件包 --- awscli
-```
-name: awscli
-repository: https://gitee.com/src-anolis-os/awscli
-summary: Universal Command Line Environment for AWS
-branches:
-- a7
-- a8
 ```
 
 **步骤二**：针对新增 package.yaml 提交 Pull Request，并在 commit log 提供如下信息；
