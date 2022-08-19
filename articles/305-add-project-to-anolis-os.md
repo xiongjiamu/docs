@@ -80,32 +80,38 @@ OpenAnolis 龙蜥社区的主要发行版产品，包括 Anolis OS 7, 8 以及 2
 
 - 软件包新增申请 Pull Request 步骤
 
-**步骤一**：增加计划集成包对应仓库下的 ${package}.yaml 文件，并完成按需填写；
+**步骤一**：增加计划集成包的 ${package}.yaml 文件，并完成按需填写；
 
 ```
 name: packge-name                                  // 软件名称，必填
 repository: https://gitee.com/src-anolis-xx/name   // 软件对应的 gitee 地址，必填
 summary: xxxxxxxxxxxxxx                            // 软件的简单描述，选填
-source_owner: owner1                               // 自研软件的 source 维护 owner 的邮箱，如果存在多个 owner， 请用 "," 隔开，默认缺省，自研软件必填
-rpm_owner: owner2                                  // 自研软件的 rpm 维护 onwer 的邮箱，如果存在多个 owner， 请用 “,” 隔开，默认缺省，自研软件必填
+rpm_owner: owner                                   // 软件的 rpm 维护 onwer 的邮箱，如果存在多个 owner， 请用 “,” 隔开，默认缺省，自研软件和新增软件必填
 branches:                                          // 软件的所有分支，每条分支下支持拓展，分支必填，分支下的扩展选填
-‒ a7
-- a8
-- a23
+‒ name: a7
+- name: a8                                         // 分支名称
+  repo: baseos                                     // 该分支下对应的 repo 地址，可选项有：baseos、appstream、dde、plus、experimental 等
+  maturity: system                                 // 表示该软件在这个分支下的成熟程度，可选项有：system、stable、rawhide
+- name: a23
 ```
 
 下面是 package.yaml 的样例：
 
 ```
-name: cloud-init
-repository: https://gitee.com/src-anolis-os/cloud-init
-summary: Cloud instance init scripts
-source_owner: xiaolong@openanolis.org
+name: libXtst
+repository: https://gitee.com/src-anolis-os/libXtst
+summary: IPMI (Intelligent Platform Management Interface) library and tools
 rpm_owner: xiaolong@openanolis.org
 branches:
-‒ a7
-‒ a8
-‒ a23
+- name: a7
+  repo: os
+  maturity: system
+- name: a8
+  repo: appstream
+  maturity: system
+- name: a23
+  repo: baseos
+  maturity: system
 ```
 
 **步骤二**：针对新增 package.yaml 提交 Pull Request，并在 commit log 提供如下信息；
