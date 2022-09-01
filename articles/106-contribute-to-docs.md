@@ -26,7 +26,7 @@
 │   ├── 102-join-discussion.md
 │   ├── ...
 │   ├── ...
-│   └── 306-build-a-new-project.md
+│   └── 307-build-a-new-project.md
 ├── assets          # Jekyll 样式、素材目录
 │   └── css
 │       ├── style.scss
@@ -70,7 +70,7 @@
 ![fork 仓库](../images/106-fork-a-repo.jpg)
 
 + 如果本次文档任务是基于现有的文章进行完善，或者你发现了已发布文档的 BUG，可以在根目录或者 `articles/` 目录下找到对应的文档，进行修改；
-+ 如果你的任务是写一篇新的文档，可以在 `articles/` 目录下创建新的文档，文件名格式为：以三位数字开头（在会议上会提前确定），然后用简单直观的英文表述，中间用'-'连字符，最后以`.md`结尾。例如：`306-build-a-new-project.md`。随后，即可开始相关的文档编写工作。
++ 如果你的任务是写一篇新的文档，可以在 `articles/` 目录下创建新的文档，文件名格式为：以三位数字开头（在会议上会提前确定），然后用简单直观的英文表述，中间用'-'连字符，最后以`.md`结尾。例如：`307-build-a-new-project.md`。随后，即可开始相关的文档编写工作。
 
 本站所有的文档，都遵循标准的 Markdown 语法，了解 Markdown 基本语法可以点击[这里](https://www.markdown.xyz/basic-syntax/)。基于 Markdown 语法，我们可以将所有的文档工作都纳入到代码流程中去。完成一次文档编写后，需要以 git commit 的形式保存。建议使用 `git commit -s <path>` 的方式，带上自己的邮箱签名。
 
