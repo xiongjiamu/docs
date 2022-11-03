@@ -89,7 +89,6 @@ The %{name}-doc package contains documentation files for %{name}.
 mkdir -p %{buildroot}/%{prefix}/%{name}
 install -m 0644 -p %{SOURCE1} %{buildroot}/%{prefix}/%{name}
 
-
 %check
 %make test 
 
@@ -189,6 +188,58 @@ rm -rf %{pypi_name}.egg-info
 * Mon Jul 25 2022 happy_orange <songnannan@linux.alibaba.com> - 0.1.0-1
 - Init pacakge from upstream
 ```
+
+### 2.3 rpm 增加 abi 和 api 信息
+
+在 anolis 23 版本中额外支持在 rpm 中分别对 so 文件和 bin 文件增加 abi 和 api 信息，下面描述如何进行使用。
+
+- 使用规则：
+  - 在 %install 阶段使用 `%generate_compatibility_deps` 生成 abi/api 文件
+  - abi/api 文件默认都存在放在 `%{abidir}` 中
+  - abi 文件需要和 so 文件一起打包
+  - api 文件需要和 bin 文件一起打包
+  - 需要通过`%dir %{abidir}`的方式增加路径定义，否则会造成卸载残留
+  - 需要根据文件列表和依赖关系共同决定`%dir %{abidir}` 的定义位置，放置在依赖树中最底层的包内，常见情况如下：
+    - 如果只有单个 rpm ，则将路径定义增加到此 rpm 中；
+    - 如果有多个 rpm，但是 abi/api 文件仅存在一个 rpm 内，则将路径定义增加到此 rpm 内；
+    - 如果多个子包中都包含 abi/api 文件，并且这些子包之间是独立的，没有依赖关系，如果有主包，且都依赖主包，则将路径定义增加到主包内；
+    - 如果多个子包中都包含 abi/api 文件，并且这些子包之间是独立的，没有依赖关系，如果没有主包，则新定一个主包，并将路径定义增加到主包内；
+    - 如果多个子包中都包含 abi/api 文件，并且这些子包不是独立的，则需要找出这条依赖线中最底层的 rpm，比如 common 或者 libs，然后将路径定义增加到这个底层 rpm 中；
+- 使用样例
+  - 在 `%install` 阶段生成 abi/api 文件，注意需要将脚本调用放在最后
+    ```
+    %install
+    %make_install docdir=%{_pkgdocdir}
+    # remove unpackaged files from the buildroot
+    rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+    %generate_compatibility_deps
+    ```
+  - 打包 abi/api 文件
+    ```
+    %files
+    %dir %{abidir}
+    %{_libdir}/libasound.so.*
+    %{abidir}/libasound.so.dump
+    %{_bindir}/aserver
+    %{abidir}/aserver-option.list
+    ```
+  - 验证 abi/api 的有效性
+    ```
+    # rpm -qpl alsa-lib-1.2.7.2-2.an23.x86_64.rpm | grep dump
+    /usr/lib/compatibility/alsa-lib/libasound.so.dump
+    /usr/lib/compatibility/alsa-lib/aserver-option.list
+    ```
+  - 验证 abi/api 的 provides
+    ```
+    # rpm -qp alsa-lib-1.2.7.2-2.an23.x86_64.rpm --provides | grep abi
+    abi(alsa-lib) = 1.2.7.2
+
+    # rpm -qp alsa-lib-1.2.7.2-2.an23.x86_64.rpm --provides | grep api
+    api(alsa-lib) = 1.2.7.2
+    ```
+
+
+
 ## 3 字段介绍和标准
 
 | **spec header** | 增加 anolis_release 的定义，从 1 开始递增 |  |
@@ -205,6 +256,7 @@ rm -rf %{pypi_name}.egg-info
 | Patch0 | 对源码进行的修改以补丁的形式。<br/>1. 可以添加更多 PatchX 指令，每次递增编号，例如：Patch1、Patch2、Patch3 等。<br/>2. 自研补丁序号从100、1000、10000等编号开始。 |可选|
 | BuildArch | 声明该软件的构建体系结构。<br/>1. koji 构建时默认为：x86_64  和 aarch64<br/>2. 本地构建时会自动继承构建它的机器的体系结构<br/>3. 如果不依赖体系结构，可以声明：BuildArch: noarch<br/>4. 如果仅涉及一个架构，则需要将对应的架构声明：BuildArch：x86_64 或 BuildArch：aarch64 |可选|
 | ExcludeArch | 声明该软件不需要的架构体系。<br/> 1. 默认不需要<br/>  2. 指定不进行编译的架构，举例：ExcludeArch: x86_64  | 可选 | 
+| ExclusiveArch | 声明该软件需要的架构体系。<br/> 1. 默认不需要<br/> 2. 指定进行编译的架构，举例：ExclusiveArch:  x86_64 | 可选 |
 | BuildRequires | 声明该软件构建所需要的全部软件包列表。<br/>1. 有多个条目 BuildRequires每个条目在 SPEC 文件中各占一行<br/>2. 每个条目内不同软件使用空格隔开<br/>3. 直接声明依赖软件的 package name，不要包含： %{_isa}、/usr/bin/xx、pkg-config(xx)、/usr/lib64/xx.so 等 |必选|
 | **spec body**      |              |
 | **字段**      | **定义**                                                     | **是否可选** |
