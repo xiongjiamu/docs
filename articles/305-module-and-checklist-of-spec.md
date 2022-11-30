@@ -120,17 +120,17 @@ install -m 0644 -p %{SOURCE1} %{buildroot}/%{prefix}/%{name}
 由于 python 类软件比较多，额外对外提供 python 类软件的 spec 模版。
 ```
 %define anolis_release 1
-%global pname package_real_name
+%global pypi_name package_real_name
 %global debug_package %{nil}
 
-Name:           python-%{pname}
+Name:           python-%{pypi_name}
 Version:        0.1.0
 Release:        %{anolis_release}%{?dist}
 Summary:        xxxx package for Python
 
 License:        MIT
-URL:            https://sourceforge.net/projects/%{pname}
-Source0:        https://sourceforge.net/%{pname}/code/%{pname}-%{version}.tar.gz
+URL:            https://sourceforge.net/projects/%{pypi_name}
+Source0:        https://sourceforge.net/%{pypi_name}/code/%{pypi_name}-%{version}.tar.gz
 
 # python package only need to build in noarch.
 BuildArch:      noarch
@@ -138,7 +138,7 @@ BuildArch:      noarch
 %description
 xxxx package for Python
 
-%package -n     python3-%{pname}
+%package -n     python3-%{pypi_name}
 Summary:        YAML 1.2 loader/dumper package for Python
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -147,19 +147,19 @@ BuildRequires:  python3-pytest
 Requires:       python3-setuptools
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-%description -n python3-%{pname}
+%description -n python3-%{pypi_name}
 xxxx package for Python
 
-%package -n     python3-%{pname}-doc
-Summary:        doc files for python3-%{pname}
-Requires:       python3-%{pname} = %{verison}-%{release}
+%package -n     python3-%{pypi_name}-doc
+Summary:        doc files for python3-%{pypi_name}
+Requires:       python3-%{pypi_name} = %{verison}-%{release}
 
-%description -n python3-%{pname}-doc
-doc files for python3-%{pname}
+%description -n python3-%{pypi_name}-doc
+doc files for python3-%{pypi_name}
 
 
 %prep
-%autosetup -n %{pname}-code-%{commit} -p1
+%autosetup -n %{pypi_name}-%{version} -p1
 rm -rf %{pypi_name}.egg-info
 
 
@@ -175,13 +175,13 @@ rm -rf %{pypi_name}.egg-info
 %pytest
 
 
-%files -n python3-%{pname}
+%files -n python3-%{pypi_name}
 %license LICENSE
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}-%{version}-*.pth
 %{python3_sitelib}/%{pypi_name}-%{version}-*.egg-info
 
-%files -n python3-%{pname}-doc
+%files -n python3-%{pypi_name}-doc
 %doc README.rst
 
 %changelog
