@@ -18,8 +18,9 @@
 | --- | --- | --- | --- |
 | 2022.2.10 | v1.0 | [@林生](https://gitee.com/forrest_ly) | 初始版本 |
 | 2022.3.31 | v1.1 | [@伊和](https://gitee.com/yueeranna) | 添加规范 |
-| 2022.4.20 | v1.2 | [@伊和](https://gitee.com/yueeranna) | 添加epoch版本号说明 |
+| 2022.4.20 | v1.2 | [@伊和](https://gitee.com/yueeranna) | 添加 epoch 版本号说明 |
 | 2022.8.3 | v1.3 | [@橘悦](https://gitee.com/happy_orange)| 新增模版和 checklist |
+| 2023.2.7 | v1.4 | [@橘悦](https://gitee.com/happy_orange) | 增加 Requires 的介绍并修改 doc 包的依赖关系 |
 
 ## 2 SPEC File 写作规范
 ### 2.1 spec 基础模版
@@ -67,7 +68,7 @@ python 3 bindings for the %{name} library.
 
 %package doc
 Summary:        Documentation files for %{name}
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{name} = %{EVR}
 BuildArch:      noarch
 
 %description    doc
@@ -152,7 +153,7 @@ xxxx package for Python
 
 %package -n     python3-%{pypi_name}-doc
 Summary:        doc files for python3-%{pypi_name}
-Requires:       python3-%{pypi_name} = %{verison}-%{release}
+Requires:       python3-%{pypi_name} = %{EVR}
 
 %description -n python3-%{pypi_name}-doc
 doc files for python3-%{pypi_name}
@@ -233,7 +234,7 @@ rm -rf %{pypi_name}.egg-info
     ```
     # rpm -qp alsa-lib-1.2.7.2-2.an23.x86_64.rpm --provides | grep abi
     abi(alsa-lib) = 1.2.7.2
-
+    
     # rpm -qp alsa-lib-1.2.7.2-2.an23.x86_64.rpm --provides | grep api
     api(alsa-lib) = 1.2.7.2
     ```
@@ -255,10 +256,11 @@ rm -rf %{pypi_name}.egg-info
 | Source0 | 上游源代码压缩存档的路径。这应该指向存档的可访问且可靠的存储，例如，上游页面而不是打包程序的本地存储。<br/>如果需要，可以添加更多 SourceX 指令，每次递增编号，例如：Source1、Source2、Source3 等。 |必选|
 | Patch0 | 对源码进行的修改以补丁的形式。<br/>1. 可以添加更多 PatchX 指令，每次递增编号，例如：Patch1、Patch2、Patch3 等。<br/>2. 自研补丁序号从100、1000、10000等编号开始。 |可选|
 | BuildArch | 声明该软件的构建体系结构。<br/>1. koji 构建时默认为：x86_64  和 aarch64<br/>2. 本地构建时会自动继承构建它的机器的体系结构<br/>3. 如果不依赖体系结构，可以声明：BuildArch: noarch<br/>4. 如果仅涉及一个架构，则需要将对应的架构声明：BuildArch：x86_64 或 BuildArch：aarch64 |可选|
-| ExcludeArch | 声明该软件不需要的架构体系。<br/> 1. 默认不需要<br/>  2. 指定不进行编译的架构，举例：ExcludeArch: x86_64  | 可选 | 
+| ExcludeArch | 声明该软件不需要的架构体系。<br/> 1. 默认不需要<br/>  2. 指定不进行编译的架构，举例：ExcludeArch: x86_64  | 可选 |
 | ExclusiveArch | 声明该软件需要的架构体系。<br/> 1. 默认不需要<br/> 2. 指定进行编译的架构，举例：ExclusiveArch:  x86_64 | 可选 |
-| BuildRequires | 声明该软件构建所需要的全部软件包列表。<br/>1. 有多个条目 BuildRequires每个条目在 SPEC 文件中各占一行<br/>2. 每个条目内不同软件使用空格隔开<br/>3. 直接声明依赖软件的 package name，不要包含： %{_isa}、/usr/bin/xx、pkg-config(xx)、/usr/lib64/xx.so 等 |必选|
-| **spec body**      |              |
+| BuildRequires | 声明该软件构建所需要的全部软件包列表。<br/>1. 有多个条目 BuildRequires 每个条目在 SPEC 文件中各占一行<br/>2. 每个条目内不同软件使用空格隔开<br/>3. 直接声明依赖软件的 package name，不要包含： %{_isa}、/usr/bin/xx、pkg-config(xx)、/usr/lib64/xx.so 等 |必选|
+| Requires | 声明该软件运行所需要的全部软件包列表。<br/>1. 有多个条目 Requires 每个条目在 SPEC 文件中各占一行<br/>2. 每个条目内不同软件使用空格隔开<br/>3. 直接声明依赖软件的 package name，不要包含： %{_isa}、/usr/bin/xx、pkg-config(xx)、/usr/lib64/xx.so 等<br/>4. 需要声明依赖软件的版本限制时，如果是其他软件，则尽量使用 version，特殊情况增加 release；如果是本软件，则精确到 release；如果是 doc 包则使用 %{ERV} ，可以省略 epoch 的检查。 |必选|
+| **spec body**      |              ||
 | **字段**      | **定义**                                                     | **是否可选** |
 | %description  | RPM 中打包的软件的完整描述。该描述可以跨越多行并且可以分成段落。 | 必选         |
 | %prep         | 用于准备软件包构建所需要的源码。<br/>1. 路径信息：将 tar.gz 从 ～/rpmbuild/SOURCES/ 目录下解压到 ～/rpmbuild/BUILD/ 下<br/>2. 建议使用 %autosetup -n %{name}-%{version}  -p1，可以自动按照补丁定义顺序将补丁以 -p1 形式打入<br/>3. 允许在此处拷贝 source 文件，例如：cp %{SOURCE1} ./<br/>4. 也允许去执行一些 shell 脚本 | 必选         |
