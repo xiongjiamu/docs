@@ -5,6 +5,8 @@ $header-bg-color: #116ae3;
 $header-bg-color-secondary: #3782e7;
 $section-headings-color: #116ae3;
 
+@import 'jekyll-theme-cayman';
+
 @font-face {
     font-family: "Alibaba Sans";
     src: url('/docs/assets/css/AlibabaSans-Regular.otf');
