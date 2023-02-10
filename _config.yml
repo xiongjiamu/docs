@@ -1,4 +1,4 @@
-remote_theme: jekyll-theme-cayman
+theme: cayman
 baseurl: /docs
 include:
     - [_layouts]
